@@ -28,7 +28,7 @@ void Level::AddEntity(Entity temp)
 }
 
 void Level::RemoveEntity()
-{ // this is almost exactly the removeEntity code for the goat & tree game we used in programming 1, but I changed the names to fit my code. Lazy, I know, but I didn't know of a better way to do it.
+{ 
 	auto dead_entity = std::remove_if(allEntities.begin(), allEntities.end(), [](const Entity* e) -> bool { return e->isDead; });
 	allEntities.erase(dead_entity, allEntities.end());
 	entityList.remove_if([](const Entity& e) -> bool { return e.isDead; });
